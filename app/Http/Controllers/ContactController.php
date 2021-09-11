@@ -10,7 +10,9 @@ class ContactController extends Controller
 
     public function index()
     {
-        return view('contactos.index');
+        $contactos = Contact::all();
+        return view('contactos.index') 
+        ->with('contactos', $contactos);
     }
 
     public function create()
@@ -21,13 +23,26 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $contacto = Contact::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'number' => $request->number,
+            'state' => 'Registro Nuevo',
+        ]);
+
+        return redirect()->back();
     }
 
 
-    public function show(Contact $contact)
+    public function show( $id)
     {
-        //
+        $contacto = Contact::all('id', $id);
+
+        if (empty($contacto)) {
+            return redirect()->back();
+        }else{
+            return view('contacto.show')->with('contacto', $contacto);
+        }
     }
 
     public function edit(Contact $contact)
@@ -35,14 +50,32 @@ class ContactController extends Controller
         return view('contactos.edit');
     }
 
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, $id)
     {
-        //
+        $contacto = Contact::find($id);
+
+        $contacto->update([
+           'name' => $request->name,
+           'email' => $request->email,
+           'number' => $request->number,
+            'state' => $request->state,
+        ]);
+
+        if ($request->origen == 'contact.edit') {
+            redirect()->route('contactos.show', $contacto->id);
+        }else{
+           return redirect()->back();
+        }
+
     }
 
 
     public function destroy($id)
-    {
+    { 
+        $contacto = Task::find($id);
+
+        $contacto->delete();
+
         return redirect()->route('contactos.index');
     }
 }

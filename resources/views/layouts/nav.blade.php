@@ -6,13 +6,12 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Noé Hassiel</a></li>
+          <li><a href="{{ route('index') }}" class="nav-link px-2 text-secondary">Noé Hassiel</a></li>
         </ul>
 
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Ingresar</button>
-          <button type="button" class="btn btn-warning">Registrarse</button>
+          <a href="{{ route('contactos.index') }}" class="nav-link btn-outline-alert me-4"> Ver contactos</a>
         </div>
       </div>
     </div>
