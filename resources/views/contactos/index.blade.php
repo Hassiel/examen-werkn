@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-4">
             <!-- Button trigger modal -->
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Nuevo Contacto
             </button>
         </div>
@@ -21,7 +21,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalTarea">Crear nueva tarea</h5>
+        <h5 class="modal-title" id="modalTarea">Añade un nuevo contacto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
        <form action="{{route('contactos.store')}}" method="POST">
@@ -87,8 +87,13 @@
                             <td>
                                
                         <button type="button" class="btn btn-outline-light cta bg" data-bs-toggle="modal" data-bs-target="#editar_{{ $contacto->id }}">
-  Editar Tarea
-</button>                      
+                        Editar Tarea
+                        </button>               
+                        <form action="{{ route('contactos.destroy', $contacto->id)}}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{method_field('DELETE')}}
+                                    <button class="btn btn-outline-danger mt-4 cta bg" type="submit">Eliminar</button>
+                                </form>                     
                             </td>
                         </tr>
                           <!-- Modal -->

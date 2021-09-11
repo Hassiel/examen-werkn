@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="jumbotron " style="margin:100git px">
+<div class="jumbotron " style="margin:100px">
   <h1 class="display-4">HOLA¡¡ </h1>
   <p class="lead">Se que tienes muchos amigos por lo que necesitas una buena aplicación para guardar sus números y correos.</p>
   <hr class="my-4">
   <p>Haz la prueba de nuestro sistema, añade un contacto a la lista.</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{{ route('contactos.index') }}" role="button">Learn more</a>
+    <a class="btn btn-primary btn-lg" href="{{ route('contactos.index') }}" role="button">Probar</a>
   </p>
 </div>
 <div class="px-4 py-5 my-5 text-center">

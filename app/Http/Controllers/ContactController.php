@@ -72,7 +72,7 @@ class ContactController extends Controller
 
     public function destroy($id)
     { 
-        $contacto = Task::find($id);
+        $contacto = Contact::find($id);
 
         $contacto->delete();
 
