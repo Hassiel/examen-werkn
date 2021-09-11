@@ -1,9 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_OZnTKS.json" 
-                    mode="bounce" background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop   autoplay></lottie-player>
+<div class="jumbotron " style="margin:100px">
+  <h1 class="display-4">HOLA¡¡ </h1>
+  <p class="lead">Se que tienes muchos amigos por lo que necesitas una buena aplicación para guardar sus números y correos.</p>
+  <hr class="my-4">
+  <p>Haz la prueba de nuestro sistema, añade un contacto a la lista.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{{ route('contactos.index') }}" role="button">Learn more</a>
+  </p>
+</div>
 <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">Guarda tus contactos de manera efectiva y sencilla</h1>
     <div class="col-lg-6 mx-auto">
