@@ -11,7 +11,7 @@
 
 
         <div class="text-end">
-          <a href="{{ route('contactos.index') }}" class="nav-link btn-outline-alert me-4"> Ver contactos</a>
+          <a href="{{ route('contactos.index') }}" class="nav-link text-white me-4"> Ver contactos</a>
         </div>
       </div>
     </div>

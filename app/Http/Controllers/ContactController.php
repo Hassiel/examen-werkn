@@ -41,7 +41,7 @@ class ContactController extends Controller
         if (empty($contacto)) {
             return redirect()->back();
         }else{
-            return view('contacto.show')->with('contacto', $contacto);
+            return view('contactos.show')->with('contacto', $contacto);
         }
     }
 

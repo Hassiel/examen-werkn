@@ -86,13 +86,13 @@
                             </td>
                             <td>
                                
-                        <button type="button" class="btn btn-outline-light cta bg" data-bs-toggle="modal" data-bs-target="#editarTarea_{{ $contacto->id }}">
+                        <button type="button" class="btn btn-outline-light cta bg" data-bs-toggle="modal" data-bs-target="#editar_{{ $contacto->id }}">
   Editar Tarea
 </button>                      
                             </td>
                         </tr>
                           <!-- Modal -->
-<div class="modal fade" id="editarTarea_{{ $contacto->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editar_{{ $contacto->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -105,12 +105,19 @@
         {{ csrf_field() }}
         {{ method_field('PUT') }}
         <!--Campos de formulario-->    
+        <div class="form-group mb-3">
         <label for="">Nombre de contacto</label>
-        <input class="form-control" type="text" placeholder="Nombre de tarea" name="name" value="{{ $contacto->name }}">
+        <input class="form-control" type="text" placeholder="Nombre de contacto" name="name" value="{{ $contacto->name }}">
+        </div>
+        <div class="form-group mb-3">
         <label for="">Email</label>
         <input class="form-control" type="email" name="email" value="{{ $contacto->email }}">
+        </div>
+        <div class="form-group mb-3">
         <label for="">Teléfono</label>
         <input class="form-control" type="tel" name="number" value="{{ $contacto->number }}">
+        </div>
+        <div class="form-group mb-3">
         <label for="">Estado</label>
                 <select class="form-control mb-3" name="state" id="">
                 <option value="Registro Nuevo">Registro Nuevo</option>
@@ -121,7 +128,6 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
         <button type="submit" class="btn btn-outline-success">Guardar cambios</button>
-        <a href="{{ route('contactos.show', $contacto->id) }}" type="button" class="btn btn-outline-info">Ver Contacto</a>
       </div>
         </form>
     </div>
