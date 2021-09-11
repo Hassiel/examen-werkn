@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="jumbotron " style="margin:100px">
+<div class="jumbotron " style="margin:100git px">
   <h1 class="display-4">HOLA¡¡ </h1>
   <p class="lead">Se que tienes muchos amigos por lo que necesitas una buena aplicación para guardar sus números y correos.</p>
   <hr class="my-4">
